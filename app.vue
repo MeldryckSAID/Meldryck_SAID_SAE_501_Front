@@ -1,7 +1,7 @@
 <template>
- <div>
- <h1>Hello World</h1>
- </div>
+  <div>
+    <h1>Hello World</h1>
+  </div>
 </template>
 
-<style lang=”scss” scoped> <style>
+<style lang="scss" scoped></style>

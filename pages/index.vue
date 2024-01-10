@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Hello helloooooo</h1>
-
+    <montre />
     <!-- <h1 v-for="item in apiData">{{ item }}</h1> -->
     {{ apiData }}
     {{ apiData.NomBoitier }}

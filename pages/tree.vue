@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>tree</h1>
-    <montre />
+    <dtree/>
   </div>
 </template>
 

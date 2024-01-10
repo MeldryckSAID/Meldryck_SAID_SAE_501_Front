@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h1>Hello World</h1>
-  </div>
+  <NuxtPage />
 </template>
 
 <style lang="scss" scoped></style>

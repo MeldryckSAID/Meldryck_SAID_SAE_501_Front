@@ -2,10 +2,12 @@
   <div>
     <h1>Hello helloooooo</h1>
 
-    {{ apiData.NomBoitier }}
-    {{ apiData.NomPierre }}
-    <h1 v-for="item in apiData">{{ item.NomBoitier }}</h1>
-    <h1 v-for="item in apiData">{{ item.NomPierre }}</h1>
+    <ul>
+      <li v-for="item in apiDataboitier">{{ item.NomBoitier }}</li>
+    </ul>
+    <ul>
+      <li v-for="item in apiDatastones">{{ item.NomPierre }}</li>
+    </ul>
   </div>
 </template>
 
@@ -14,17 +16,18 @@
 <script setup>
 import { API } from "@/utils/axios";
 
-const apiData = ref([]);
+const apiDataboitier = ref([]);
+const apiDatastones = ref([]);
 
 const onboitier = async () => {
   console.log("test2");
   const response = await API.get("/boitier");
-  apiData.value = response.data;
+  apiDataboitier.value = response.data;
 };
 const onstones = async () => {
   console.log("test");
   const response = await API.get("/stones");
-  apiData.value = response.data;
+  apiDatastones.value = response.data;
 };
 
 onMounted(async () => {

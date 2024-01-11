@@ -2,6 +2,8 @@
   <div>
     <h1>Hello helloooooo</h1>
 
+    <main class="layout__page"></main>
+
     <ul>
       <li v-for="item in apiDataboitier">{{ item.NomBoitier }}</li>
     </ul>

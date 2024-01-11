@@ -8,6 +8,7 @@ NuxtLink } from '#build/components';
       <li><nuxt-link to="/">home</nuxt-link></li>
       <li><nuxt-link to="/user">User</nuxt-link></li>
       <li><nuxt-link to="/panier">cart</nuxt-link></li>
+      <li><nuxt-link to="/connexion">connexion</nuxt-link></li>
       
     </ul>
   </div>

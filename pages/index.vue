@@ -22,12 +22,12 @@ const apiDataboitier = ref([]);
 const apiDatastones = ref([]);
 
 const onboitier = async () => {
-  console.log("test2");
+  console.log(API);
   const response = await API.get("/boitier");
   apiDataboitier.value = response.data;
 };
 const onstones = async () => {
-  console.log("test");
+  console.log(API);
   const response = await API.get("/stones");
   apiDatastones.value = response.data;
 };

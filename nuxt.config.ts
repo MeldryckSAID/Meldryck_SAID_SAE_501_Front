@@ -3,10 +3,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["@/assets/main.scss"],
 
+  modules: ["@pinia/nuxt"],
+
   runtimeConfig: {
     public: {
-      client: "",
-      apiUrl:"",
+      apiUrl: "",
     },
   },
 });

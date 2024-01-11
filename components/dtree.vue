@@ -225,7 +225,7 @@ const changeTexture = (texture) => {
   currentTexture = texture;
   // Charger la nouvelle texture et l'appliquer au matériau du bracelet
   const textureLoader = new TextureLoader();
-  const newTexture = textureLoader.load(`public/images/${texture}`);
+  const newTexture = textureLoader.load(`/images/${texture}`);
   iBracelet.material.map = newTexture;
   iBracelet.material.needsUpdate = true;
 };
@@ -233,7 +233,7 @@ const changeTextureBoitierRond = (textureBoitierRond) => {
   currentTextureBoitierRond = textureBoitierRond;
   // Charger la nouvelle texture et l'appliquer au matériau du bracelet
   const textureLoader = new TextureLoader();
-  const newTexture = textureLoader.load(`public/images/${textureBoitierRond}`);
+  const newTexture = textureLoader.load(`/images/${textureBoitierRond}`);
   boitierRond.material.map = newTexture;
   boitierRond.material.needsUpdate = true;
 };
@@ -258,7 +258,7 @@ function onLoaded(collada) {
   // boitierRond.material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
   const textureLoaderBoitierRond = new TextureLoader();
   const textureBoitierRond = textureLoaderBoitierRond.load(
-    `public/images/${currentTextureBoitierRond}`
+    `/images/${currentTextureBoitierRond}`
   );
   boitierRond.material = new THREE.MeshBasicMaterial({
     map: textureBoitierRond,
@@ -290,7 +290,7 @@ function onLoaded(collada) {
 
   iBracelet = objects.getObjectByName("bracelet");
   const textureLoader = new TextureLoader();
-  const texture = textureLoader.load(`public/images/${currentTexture}`);
+  const texture = textureLoader.load(`/images/${currentTexture}`);
   iBracelet.material = new THREE.MeshBasicMaterial({ map: texture });
 
   iFermoir = objects.getObjectByName("fermoir");

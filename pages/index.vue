@@ -1,13 +1,11 @@
 <template>
   <div>
     <h1>Hello helloooooo</h1>
-   <dtree></dtree>
-    <!-- <h1 v-for="item in apiData">{{ item }}</h1> -->
-    <!-- {{ apiData }}
+
     {{ apiData.NomBoitier }}
     {{ apiData.NomPierre }}
     <h1 v-for="item in apiData">{{ item.NomBoitier }}</h1>
-    <h1 v-for="item in apiData">{{ item.NomPierre }}</h1> -->
+    <h1 v-for="item in apiData">{{ item.NomPierre }}</h1>
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>tree</h1>
+    <h1>Configuration</h1>
     <dtree/>
   </div>
 </template>

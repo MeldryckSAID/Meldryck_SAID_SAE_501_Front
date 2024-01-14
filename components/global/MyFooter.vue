@@ -5,16 +5,14 @@
     <nuxt-link to="/"> <LogoMyLogo name="white" class="footer-content-logo" /></nuxt-link>
     <ul class="footer-content-links">
       <li class="footer-content-links-link">
-        <nuxt-link to="/configuration">Config</nuxt-link>
+        <nuxt-link to="/profile">Mon espace</nuxt-link>
       </li>
       <li class="footer-content-links-link">
-        <nuxt-link to="/user">User</nuxt-link>
+        <nuxt-link to="/montre">Nos montres</nuxt-link>
       </li>
+     
       <li class="footer-content-links-link">
-        <nuxt-link to="/panier">cart</nuxt-link>
-      </li>
-      <li class="footer-content-links-link">
-        <nuxt-link to="/connexion">connexion</nuxt-link>
+        <nuxt-link to="/register">connexion</nuxt-link>
       </li>
     </ul>
   </div>

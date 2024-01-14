@@ -1,11 +1,13 @@
 <template>
   <div class="container-three">
-    <h3>Fonctionnement threejs</h3>
-    <canvas ref="canvas" />
+    <div>
+      <h2>Fonctionnement threejs</h2>
+      <canvas ref="canvas" />
+    </div>
     <div>
       <div class="container-three-information">
         <div>
-          <h2 class="">Texture du Bracelet :</h2>
+          <h3 class="">Texture du Bracelet :</h3>
         </div>
         <div class="container-three-btn">
           <MyButton @click="changeTexture('texture-cuir-blanc.jpg')">
@@ -21,7 +23,7 @@
       </div>
       <div class="container-three-information">
         <div>
-          <h2 class="">Texture du Boitier Rond</h2>
+          <h3 class="">Texture du Boitier Rond</h3>
         </div>
         <div class="container-three-btn">
           <MyButton @click="changeTextureBoitierRond('background_black01.png')">
@@ -55,13 +57,13 @@
       </div>
       <div class="container-three-information">
         <div>
-          <h2 class="">Couleur du Fermoir</h2>
+          <h3 class="">Couleur du Fermoir</h3>
         </div>
         <input type="color" @input="handleColorChange" />
       </div>
       <div class="container-three-information">
         <div>
-          <h2 class="">Type de Pierre Précieuse</h2>
+          <h3 class="">Type de Pierre Précieuse</h3>
         </div>
         <div class="container-three-btn">
           <MyButton @click="changePierreColor('rubis')"> Rubis </MyButton>
@@ -379,11 +381,10 @@ const initback = () => {
   faces[5].rotation.x = -Math.PI / 2;
 
   // Ajouter toutes les faces à la scène
-  faces.forEach(face => {
+  faces.forEach((face) => {
     scene.add(face);
   });
 };
-
 
 onMounted(() => {
   initScene();

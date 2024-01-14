@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-crea">
     <h2>Création de votre Montre</h2>
 
     <div class="canvas">
@@ -127,7 +127,7 @@
         <div class="contaier-form-crea-selection-input">
           <label for="nom">Nom de la Montre</label>
           <input
-            class="contaier-form-crea-selection-input"
+            class="contaier-form-crea-selection-input-nom"
             type="text"
             name="nom"
             id="nom"
@@ -233,8 +233,16 @@
 </template>
 
 <style lang="scss" scoped>
+.main-crea {
+  background-color: black;
+  color: aliceblue;
+  text-align: center;
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+}
 .contaier-form-crea {
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -243,40 +251,52 @@
     gap: 30px;
     justify-content: space-around;
     &-input {
-      
       display: flex;
       justify-content: center;
       flex-direction: column;
       width: fit-content;
       gap: 20px;
+      &-nom {
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        border: 1px solid white;
+        background-color: black;
+        border-radius: 0.65rem;
+        color: white;
+      }
     }
     &-select {
-      background-color: red;
-    }
-     &-btn {
-    position: relative;
-    border: 2px solid black;
-    border-radius: 50px;
-    display: inline-grid;
-    place-content: center;
-    //   font-family: $arc;
-    font-size: 15px;
-    font-weight: 600;
-    width: 178px;
-    height: 52px;
-    overflow: hidden;
-    background: linear-gradient(to left, black 50%, white 50%);
-    background-size: 200% 100%;
-    background-position: 0% 0;
-    transition: background-position 0.3s, color 0.3s;
-    color: black;
-    text-decoration: none;
-    &:hover {
-      background-position: 100% 0;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid white;
+      background-color: black;
+      border-radius: 0.65rem;
       color: white;
-      box-shadow: inset 0 0 0 2px white, 0 0 0;
     }
-  }
+    &-btn {
+      position: relative;
+    border:2px solid white;
+      border-radius: 50px;
+      display: inline-grid;
+      place-content: center;
+      //   font-family: $arc;
+      font-size: 15px;
+      font-weight: 600;
+      width: 178px;
+      height: 52px;
+      overflow: hidden;
+       background: linear-gradient(to left, white 50%, black 50%);
+      background-size: 200% 100%;
+      background-position: 0% 0;
+      transition: background-position 0.3s, color 0.3s;
+      color: white;
+      text-decoration: none;
+      &:hover {
+        background-position: 100% 0;
+        color: black;
+        box-shadow: inset 0 0 0 2px black, 0 0 0;
+      }
+    }
   }
 }
 

@@ -17,13 +17,11 @@
             <gridCard :valeurMontres="monPanier"/>
             <p v-if="monPanier.length == 0" class="compte__section--texte">Votre panier est vide.</p>
             
-            <myButton v-if="monPanier.length != 0" class="compte__bouton" @click="suppPanier = 'acheter'">Acheter mon panier</myButton>
+           
             <myButton v-if="monPanier.length != 0" color="black" class="compte__bouton"  @click="suppPanier = 'vider'">Vider mon panier</myButton>
 
             <div v-if="suppPanier.length != 0" class="compte__popup compte__popup--acheter">
-                <p v-if="suppPanier == 'acheter'">Votre commande a été passée avec succès.</p>
-                <p v-if="suppPanier == 'acheter'">Merci de votre commande !</p>
-
+            
                 <p v-if="suppPanier == 'vider'">Votre panier a été vidé avec succès.</p>
 
                 <myButton @click="videPanier()">Ok</myButton>

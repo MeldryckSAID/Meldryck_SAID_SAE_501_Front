@@ -1,5 +1,7 @@
 <template>
-  <MyHeader />
+  <header>
+    <MyHeader />
+  </header>
   <slot></slot>
-  <MyFooter />
+  <footer><MyFooter /></footer>
 </template>

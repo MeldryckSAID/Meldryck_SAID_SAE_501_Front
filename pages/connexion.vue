@@ -153,8 +153,6 @@ const logout = async () => {
           value="Je m'inscris"
         />
       </form>
-
-      
     </div>
 
     <div class="container-form">
@@ -180,10 +178,8 @@ const logout = async () => {
           v-model="userCo.Password"
         />
 
-        <input class="form-co-btn" type="submit" value="Je me connect" />
+        <input class="form-co-btn" type="submit" value="Je me connecte" />
       </form>
-
-      
     </div>
   </div>
   <div v-if="userInfo">
@@ -191,7 +187,6 @@ const logout = async () => {
     <p>Nom : {{ userInfo.name }}</p>
     <p>Prénom : {{ userInfo.surname }}</p>
     <p>Email : {{ userInfo.mail }}</p>
-    
   </div>
   <div v-else>
     <p>Utilisateur non connecté ou informations indisponibles</p>
@@ -204,7 +199,7 @@ const logout = async () => {
   <p>{{ message }}</p>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container {
   display: flex;
   justify-content: space-around;
@@ -212,10 +207,11 @@ const logout = async () => {
     width: fit-content;
     padding-left: 5%;
     padding-right: 5%;
+  
     border-radius: 5%;
     color: white;
     flex-direction: column;
-    background-color: #393e43;
+    background-color: black;
     justify-content: center;
     align-items: center;
   }
@@ -234,7 +230,9 @@ const logout = async () => {
     border-radius: 5%;
   }
   &-btn {
-    background-color: aqua;
+    background-color: white;
+    padding-bottom: 5%;
+  
   }
 }
 </style>

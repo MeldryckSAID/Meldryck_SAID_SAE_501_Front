@@ -1,28 +1,31 @@
 <template>
-    <div class="my_card">
-        <sceneMontre v-bind="valeur" />
-
-        <div class="my_card__content">
-            <p class="my_card__content--nom">{{ valeur.nom }}</p>
-            <div class="my_card__content--infos">
-                <p class="user">{{ valeur.createur }}</p>
-                <p class="prix">{{ valeur.prix_montre }} €</p>
-            </div>
-    
-            <myButton class="my_card__content--bouton" :lien="`/montre/${valeur.montreID}`">Voir</myButton>
-           
-        </div>
+  <div class="card">
+    <div class="card-content">
+      <p class="card-content-nom">{{ valeur.nom }}</p>
+      <div class="card-content-info">
+        <p class="card-content-info-prix">{{ valeur.prix_montre }} €</p>
+      </div>
+      <myButton class="card-content-btn" :lien="`/montre/${valeur.montreID}`"
+        >Voir Inforation</myButton
+      >
     </div>
+  </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" setup>
+.card-content {
+  border: 2px solid white;
+  border-radius: 5%;
+  padding: 30px;
 
+  &-nom {
+    list-style: none;
+  }
+}
 </style>
 
 <script setup>
-
 defineProps({
   valeur: Object,
-})
-
+});
 </script>

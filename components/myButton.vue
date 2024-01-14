@@ -18,7 +18,7 @@
   display: inline-grid;
   place-content: center;
   //   font-family: $arc;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
   width: 178px;
   height: 52px;

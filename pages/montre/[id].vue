@@ -32,138 +32,135 @@
           <td>Prix total</td>
           <td colspan="2">{{ montrePreview.prix_montre }} €</td>
         </tr>
-        <tr v-if="store.token">
-          <td colspan="3">
-            <myButton
-              v-if="!isMontreInPanier && store.token"
-              @click="ajouterPanier"
-              >Ajouter au Panier</myButton
-            >
-            <myButton
-              v-if="isMontreInPanier && store.token"
-              @click="supprimerPanier"
-              >Supprimer du Panier</myButton
-            >
-          </td>
-        </tr>
+
         <p class="container-montre-info">
-         {{ message }}
+          {{ message }}
         </p>
       </table>
+      <div class="container-montre-info-btn" v-if="store.token">
+        <myButton v-if="!isMontreInPanier && store.token" @click="ajouterPanier"
+          >Ajouter au Panier</myButton
+        >
+        <myButton
+          v-if="isMontreInPanier && store.token"
+          @click="supprimerPanier"
+          >Supprimer du Panier</myButton
+        >
+      </div>
     </div>
 
     <form
       v-if="store.token && memeUser"
       @submit.prevent="modifierMontre"
-      class="fiche_montre__form"
+      class="contaier-form-modif"
     >
-      <div class="fiche_montre__form--input">
-        <label for="nom">Nom de la Montre</label>
+      <div class="contaier-form-modif-nom">
+        <label for="nom">Nom de la Montre: </label>
         <input
-          class="fiche_montre__form--input"
+          class="contaier-form-modif-nom-input"
           type="text"
           name="nom"
           id="nom"
           v-model="montrePreview.nom"
         />
       </div>
-
-      <div class="fiche_montre__form--input">
-        <label for="boitier_texture">Texture du Boitier</label>
-        <select
-          class="fiche_montre__form--select"
-          name="boitier_texture"
-          id="boitier_texture"
-          v-model="montrePreview.boitier_texture"
-        >
-          <option
-            v-for="b in boitier_texture"
-            :key="b.boitierTextureID"
-            :value="b.nom"
-            @click="updatePrice"
+      <div class="contaier-form-modif-selection">
+        <div class="contaier-form-modif-selection-input">
+          <label for="boitier_texture">Texture du Boitier</label>
+          <select
+            class="contaier-form-modif-selection-input-select"
+            name="boitier_texture"
+            id="boitier_texture"
+            v-model="montrePreview.boitier_texture"
           >
-            {{ b.nom }}
-          </option>
-        </select>
-      </div>
+            <option
+              v-for="b in boitier_texture"
+              :key="b.boitierTextureID"
+              :value="b.nom"
+              @click="updatePrice"
+            >
+              {{ b.nom }}
+            </option>
+          </select>
+        </div>
 
-      <div class="fiche_montre__form--input">
-        <label for="boitier_forme">Forme du Boitier</label>
-        <select
-          class="fiche_montre__form--select"
-          name="boitier_forme"
-          id="boitier_forme"
-          v-model="montrePreview.boitier_forme"
-        >
-          <option
-            v-for="b in boitier_forme"
-            :key="b.boitierFormeID"
-            :value="b.nom"
-            @click="updatePrice"
+        <div class="contaier-form-modif-selection-input">
+          <label for="boitier_forme">Forme du Boitier</label>
+          <select
+            class="contaier-form-modif-selection-input-select"
+            name="boitier_forme"
+            id="boitier_forme"
+            v-model="montrePreview.boitier_forme"
           >
-            {{ b.nom }}
-          </option>
-        </select>
-      </div>
+            <option
+              v-for="b in boitier_forme"
+              :key="b.boitierFormeID"
+              :value="b.nom"
+              @click="updatePrice"
+            >
+              {{ b.nom }}
+            </option>
+          </select>
+        </div>
 
-      <div class="fiche_montre__form--input">
-        <label for="bracelet_texture">Texture du Bracelet</label>
-        <select
-          class="fiche_montre__form--select"
-          name="bracelet_texture"
-          id="bracelet_texture"
-          v-model="montrePreview.bracelet_texture"
-        >
-          <option
-            v-for="b in bracelet_texture"
-            :key="b.braceletTextureID"
-            :value="b.nom"
-            @click="updatePrice"
+        <div class="contaier-form-modif-selection-input">
+          <label for="bracelet_texture">Texture du Bracelet</label>
+          <select
+            class="contaier-form-modif-selection-input-select"
+            name="bracelet_texture"
+            id="bracelet_texture"
+            v-model="montrePreview.bracelet_texture"
           >
-            {{ b.nom }}
-          </option>
-        </select>
-      </div>
+            <option
+              v-for="b in bracelet_texture"
+              :key="b.braceletTextureID"
+              :value="b.nom"
+              @click="updatePrice"
+            >
+              {{ b.nom }}
+            </option>
+          </select>
+        </div>
 
-      <div class="fiche_montre__form--input">
-        <label for="pierre">Pierre Préciseuse</label>
-        <select
-          class="fiche_montre__form--select"
-          name="pierre"
-          id="pierre"
-          v-model="montrePreview.pierre"
-        >
-          <option
-            v-for="p in pierre"
-            :key="p.pierreID"
-            :value="p.nom"
-            @click="updatePrice"
+        <div class="contaier-form-modif-selection-input">
+          <label for="pierre">Pierre Préciseuse</label>
+          <select
+            class="contaier-form-modif-selection-input-select"
+            name="pierre"
+            id="pierre"
+            v-model="montrePreview.pierre"
           >
-            {{ p.nom }}
-          </option>
-        </select>
-      </div>
+            <option
+              v-for="p in pierre"
+              :key="p.pierreID"
+              :value="p.nom"
+              @click="updatePrice"
+            >
+              {{ p.nom }}
+            </option>
+          </select>
+        </div>
 
-      <div class="fiche_montre__form--input">
-        <label for="main_color">Couleur</label>
-        <input
-          type="color"
-          name="main_color"
-          id="main_color"
-          v-model="montrePreview.main_color"
-        />
+        <div class="contaier-form-modif-selection-input">
+          <label for="main_color">Couleur</label>
+          <input
+            type="color"
+            name="main_color"
+            id="main_color"
+            v-model="montrePreview.main_color"
+          />
+        </div>
       </div>
-
-      <div class="fiche_montre__form--boutons">
+      <div class="contaier-form-modif-boutons">
         <input
           v-if="memeUser"
-          class="bouton"
+          class="contaier-form-modif-boutons-btn"
           type="submit"
           value="Enregistrer les Modifications"
         />
         <myButton
           v-if="store.token"
-          class="bouton"
+          class="contaier-form-modif-boutons-btn"
           color="black"
           @click="supp = true"
           >Supprimer</myButton
@@ -172,18 +169,28 @@
     </form>
 
     <div v-if="!store.token" class="fiche_montre__login">
-            <p>Pour modifier cette montre où l'ajouter à votre panier, veuillez vous connecter ou vous inscrire.</p>
-            <myButton class="fiche_montre__bouton" lien="/login">Login</myButton>
+      <p>
+        Pour modifier cette montre où l'ajouter à votre panier, veuillez vous
+        connecter ou vous inscrire.
+      </p>
+      <myButton class="fiche_montre__bouton" lien="/login">Login</myButton>
+    </div>
 
-        </div>
+    <div v-if="supp" class="fiche_montre__popup-supp">
+      <p>
+        Vous êtes sur de vouloir supprimer cette montre ? Cette action est
+        irréversible.
+      </p>
+      <p>
+        Cette montre disparaitra de votre panier et de ceux des autres
+        utilisateurs.
+      </p>
 
-        <div v-if="supp" class="fiche_montre__popup-supp">
-            <p>Vous êtes sur de vouloir supprimer cette montre ? Cette action est irréversible.</p>
-            <p>Cette montre disparaitra de votre panier et de ceux des autres utilisateurs.</p>
-
-            <myButton @click="supp = false">Non, je la laisse</myButton>
-            <myButton color="black" @click="supprimerMontre">Oui, je veux la supprimer</myButton>
-        </div>
+      <myButton @click="supp = false">Non, je la laisse</myButton>
+      <myButton color="black" @click="supprimerMontre"
+        >Oui, je veux la supprimer</myButton
+      >
+    </div>
   </main>
 </template>
 
@@ -197,6 +204,69 @@
   display: grid;
   align-items: center;
 }
+.contaier-form-modif {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &-nom {
+    &-input {
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid white;
+      background-color: black;
+      border-radius: 0.65rem;
+      color: white;
+    }
+  }
+  &-selection {
+    display: flex;
+    gap: 30px;
+    justify-content: space-around;
+    &-input {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: fit-content;
+      gap: 20px;
+      &-select {
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        border: 1px solid white;
+        background-color: black;
+        border-radius: 0.65rem;
+        color: white;
+      }
+    }
+  }
+  &-boutons {
+    display: flex;
+    justify-content: space-around;
+    &-btn {
+      position: relative;
+      border: 2px solid white;
+      border-radius: 50px;
+      display: inline-grid;
+      place-content: center;
+      //font-family: $arc;
+      font-size: 12px;
+      font-weight: 600;
+      width: 178px;
+      height: 52px;
+      overflow: hidden;
+      background: linear-gradient(to left, white 50%, black 50%);
+      background-size: 200% 100%;
+      background-position: 0% 0;
+      transition: background-position 0.3s, color 0.3s;
+      color: white;
+      text-decoration: none;
+      &:hover {
+        background-position: 100% 0;
+        color: black;
+        box-shadow: inset 0 0 0 2px black, 0 0 0;
+      }
+    }
+  }
+}
 .container-montre {
   .container-montre-infos {
     width: 100%;
@@ -207,6 +277,9 @@
     }
 
     .container-montre-info {
+      &-btn {
+        padding: 10px;
+      }
       td {
         padding: 8px;
         border: 1px solid white;

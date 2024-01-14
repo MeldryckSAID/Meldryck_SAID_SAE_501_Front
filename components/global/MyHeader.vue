@@ -5,16 +5,16 @@
     <nuxt-link to="/"> <LogoMyLogo name="black" class="header-content-logo" /></nuxt-link>
     <ul class="header-content-links">
       <li class="header-content-links-link">
-        <nuxt-link to="/configuration">Config</nuxt-link>
+        <nuxt-link to="/profile">compte</nuxt-link>
       </li>
       <li class="header-content-links-link">
-        <nuxt-link to="/user">User</nuxt-link>
+        <nuxt-link to="/montre">montre</nuxt-link>
       </li>
       <li class="header-content-links-link">
-        <nuxt-link to="/panier">cart</nuxt-link>
+        <nuxt-link to="/profile">cart</nuxt-link>
       </li>
       <li class="header-content-links-link">
-        <nuxt-link to="/connexion">connexion</nuxt-link>
+        <nuxt-link to="/register">connexion</nuxt-link>
       </li>
     </ul>
   </div>

@@ -1,132 +1,128 @@
 <template>
-  <div>
+  <div class="container-three">
+    <h3>Fonctionnement threejs</h3>
     <canvas ref="canvas" />
-    <div class="mt-2">
-      <div>
-        <h2 class="font-bold">Texture du Bracelet :</h2>
+    <div>
+      <div class="container-three-information">
+        <div>
+          <h2 class="">Texture du Bracelet :</h2>
+        </div>
+        <div class="container-three-btn">
+          <MyButton @click="changeTexture('texture-cuir-blanc.jpg')">
+            Cuir Blanc
+          </MyButton>
+          <MyButton @click="changeTexture('texture-tissus-or.jpg')">
+            Tissu Or
+          </MyButton>
+          <MyButton @click="changeTexture('texture-tissus-marron.jpg')">
+            Tissu Marron
+          </MyButton>
+        </div>
       </div>
-      <div class="flex gap-2">
-        <button
-          class="border-black border-2 px-2 py-1 mx-2 my-1 rounded-lg"
-          @click="changeTexture('texture-cuir-blanc.jpg')"
-        >
-          Cuir Blanc
-        </button>
-        <button
-          class="border-black border-2 px-2 py-1 mx-2 my-1 rounded-lg"
-          @click="changeTexture('texture-tissus-or.jpg')"
-        >
-          Tissu Or
-        </button>
-        <button
-          class="border-black border-2 px-2 py-1 mx-2 my-1 rounded-lg"
-          @click="changeTexture('texture-tissus-marron.jpg')"
-        >
-          Tissu Marron
-        </button>
+      <div class="container-three-information">
+        <div>
+          <h2 class="">Texture du Boitier Rond</h2>
+        </div>
+        <div class="container-three-btn">
+          <MyButton @click="changeTextureBoitierRond('background_black01.png')">
+            Black 01
+          </MyButton>
+          <MyButton @click="changeTextureBoitierRond('background_black02.png')">
+            Black 02
+          </MyButton>
+          <MyButton @click="changeTextureBoitierRond('background_fluo01.png')">
+            Fluo
+          </MyButton>
+          <MyButton @click="changeTextureBoitierRond('background_mickey.png')">
+            Mickey
+          </MyButton>
+          <MyButton @click="changeTextureBoitierRond('background_white01.png')">
+            White 01
+          </MyButton>
+          <MyButton @click="changeTextureBoitierRond('background_white02.png')">
+            White 02
+          </MyButton>
+          <MyButton @click="changeTextureBoitierRond('background_white03.png')">
+            White 03
+          </MyButton>
+          <MyButton @click="changeTextureBoitierRond('background_white04.png')">
+            White 04
+          </MyButton>
+          <MyButton @click="changeTextureBoitierRond('background_white05.png')">
+            White 05
+          </MyButton>
+        </div>
       </div>
-    </div>
-    <div class="mt-2">
-      <div>
-        <h2 class="font-bold">Texture du Boitier Rond</h2>
+      <div class="container-three-information">
+        <div>
+          <h2 class="">Couleur du Fermoir</h2>
+        </div>
+        <input type="color" @input="handleColorChange" />
       </div>
-      <div class="flex gap-2">
-        <button
-          class="border-black border-2 px-2 py-1 mx-2 my-1 rounded-lg"
-          @click="changeTextureBoitierRond('background_black01.png')"
-        >
-          Black 01
-        </button>
-        <button
-          class="border-black border-2 px-2 py-1 mx-2 my-1 rounded-lg"
-          @click="changeTextureBoitierRond('background_black02.png')"
-        >
-          Black 02
-        </button>
-        <button
-          class="border-black border-2 px-2 py-1 mx-2 my-1 rounded-lg"
-          @click="changeTextureBoitierRond('background_fluo01.png')"
-        >
-          Fluo
-        </button>
-        <button
-          class="border-black border-2 px-2 py-1 mx-2 my-1 rounded-lg"
-          @click="changeTextureBoitierRond('background_mickey.png')"
-        >
-          Mickey
-        </button>
-        <button
-          class="border-black border-2 px-2 py-1 mx-2 my-1 rounded-lg"
-          @click="changeTextureBoitierRond('background_white01.png')"
-        >
-          White 01
-        </button>
-        <button
-          class="border-black border-2 px-2 py-1 mx-2 my-1 rounded-lg"
-          @click="changeTextureBoitierRond('background_white02.png')"
-        >
-          White 02
-        </button>
-        <button
-          class="border-black border-2 px-2 py-1 mx-2 my-1 rounded-lg"
-          @click="changeTextureBoitierRond('background_white03.png')"
-        >
-          White 03
-        </button>
-        <button
-          class="border-black border-2 px-2 py-1 mx-2 my-1 rounded-lg"
-          @click="changeTextureBoitierRond('background_white04.png')"
-        >
-          White 04
-        </button>
-        <button
-          class="border-black border-2 px-2 py-1 mx-2 my-1 rounded-lg"
-          @click="changeTextureBoitierRond('background_white05.png')"
-        >
-          White 05
-        </button>
-      </div>
-    </div>
-    <div class="flex gap-2 my-2">
-      <div>
-        <h2 class="font-bold">Couleur du Fermoir</h2>
-      </div>
-      <input type="color" @input="handleColorChange" />
-    </div>
-    <div class="mt-2">
-      <div>
-        <h2 class="font-bold">Type de Pierre Précieuse</h2>
-      </div>
-      <div class="flex gap-2">
-        <button
-          class="border-black border-2 px-2 py-1 mx-2 my-1 rounded-lg"
-          @click="changePierreColor('rubis')"
-        >
-          Rubis
-        </button>
-        <button
-          class="border-black border-2 px-2 py-1 mx-2 my-1 rounded-lg"
-          @click="changePierreColor('diamant')"
-        >
-          Diamant
-        </button>
-        <button
-          class="border-black border-2 px-2 py-1 mx-2 my-1 rounded-lg"
-          @click="changePierreColor('émeraude')"
-        >
-          Émeraude
-        </button>
+      <div class="container-three-information">
+        <div>
+          <h2 class="">Type de Pierre Précieuse</h2>
+        </div>
+        <div class="container-three-btn">
+          <MyButton @click="changePierreColor('rubis')"> Rubis </MyButton>
+          <MyButton @click="changePierreColor('diamant')"> Diamant </MyButton>
+          <MyButton @click="changePierreColor('émeraude')"> Émeraude </MyButton>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
+<style lang="scss" scoped>
+.container-three {
+  display: flex;
+  flex-direction: row;
+  &-information {
+    align-items: center;
+    display: flex;
+
+    flex-direction: column;
+  }
+  &-btn {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1600px) {
+  .container-three {
+    display: flex;
+
+    flex-direction: column;
+
+    &-information {
+      align-items: center;
+      display: flex;
+
+      flex-direction: column;
+    }
+    &-btn {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+</style>
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { ColladaLoader } from "three/examples/jsm/loaders/ColladaLoader.js";
 import * as THREE from "three";
 import { TextureLoader } from "three/src/loaders/TextureLoader.js";
+import MyButton from "./myButton.vue";
 
 const canvas = ref(null);
 let controls = null;
@@ -329,8 +325,69 @@ var onError = function (data) {
   console.error(data);
 };
 
+// const initback = () => {
+//   ... Votre code existant ...
+
+//   Charger l'image d'arrière-plan
+//   const backgroundTexture = new THREE.TextureLoader().load("/images/back2.png");
+
+//   Créer un plan pour l'arrière-plan
+//   const backgroundGeometry = new THREE.PlaneGeometry(500, 300);
+
+//   const backgroundMaterial = new THREE.MeshBasicMaterial({
+//     map: backgroundTexture,
+//   });
+//   const background = new THREE.Mesh(backgroundGeometry, backgroundMaterial);
+
+//   Positionner le plan derrière la montre
+//   background.position.set(0, 0, -50);
+
+//   Ajouter le plan à la scène
+//   scene.add(background);
+// };
+
+const initback = () => {
+  // Charger l'image pour les faces de la boîte
+  const boxTexture = new THREE.TextureLoader().load("/images/back2.png");
+
+  // Créer un plan pour chaque face de la boîte
+  const boxGeometry = new THREE.PlaneGeometry(500, 300);
+  const boxMaterial = new THREE.MeshBasicMaterial({ map: boxTexture });
+
+  // Créer six faces pour la boîte
+  const faces = [];
+  for (let i = 0; i < 6; i++) {
+    faces[i] = new THREE.Mesh(boxGeometry, boxMaterial);
+  }
+
+  // Positionner chaque face de la boîte
+  // Face arrière
+  faces[0].position.set(0, 0, -50);
+  // Face avant
+  faces[1].position.set(0, 0, 250);
+  // Face droite
+  faces[2].position.set(250, 0, 0);
+  faces[2].rotation.y = Math.PI / 2;
+  // Face gauche
+  faces[3].position.set(-250, 0, 0);
+  faces[3].rotation.y = -Math.PI / 2;
+  // Face du haut
+  faces[4].position.set(0, 150, 0);
+  faces[4].rotation.x = Math.PI / 2;
+  // Face du bas
+  faces[5].position.set(0, -150, 0);
+  faces[5].rotation.x = -Math.PI / 2;
+
+  // Ajouter toutes les faces à la scène
+  faces.forEach(face => {
+    scene.add(face);
+  });
+};
+
+
 onMounted(() => {
   initScene();
+  initback();
   animate();
 });
 

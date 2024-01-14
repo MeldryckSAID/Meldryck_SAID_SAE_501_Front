@@ -11,12 +11,34 @@
       <li v-for="item in apiDatastones">{{ item.NomPierre }}</li>
     </ul>
   </div>
+  <div class="test">
+    <MyIcon stroke="primary" color="primary" name="trash" size="small" />
+    <MyIcon stroke="primary" color="primary" name="more" size="small" />
+    <MyIcon stroke="primary" color="primary" name="less" size="small" />
+  </div>
+  <div class="test">
+    <MyIcon stroke="primary" color="primary" name="trash" size="regular" />
+    <MyIcon stroke="primary" color="primary" name="more" size="regular" />
+    <MyIcon stroke="primary" color="primary" name="less" size="regular" />
+  </div>
+  <div class="test">
+    <MyIcon stroke="primary" color="primary" name="trash" size="big" />
+    <MyIcon stroke="primary" color="primary" name="more" size="big" />
+    <MyIcon stroke="primary" color="primary" name="less" size="big" />
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.test {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+</style>
 
 <script setup>
 import { API } from "@/utils/axios";
+import MyIcon from "~/components/icon/MyIcon.vue";
 
 const apiDataboitier = ref([]);
 const apiDatastones = ref([]);

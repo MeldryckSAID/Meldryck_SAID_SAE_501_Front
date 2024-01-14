@@ -1,5 +1,4 @@
-import type configurationVue from '~/pages/configuration.vue'; import type {
-NuxtLink } from '#build/components';
+
 <script setup></script>
 <template>
   <div>

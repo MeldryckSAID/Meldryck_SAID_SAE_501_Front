@@ -22,6 +22,8 @@
 
 <style lang="scss" scoped>
 .footer-content {
+  border-top: 3px white dashed;
+  padding: 2%;
   color: white;
   height: 100px;
   background-color: black;

@@ -33,7 +33,8 @@
         <hr class="compte__deco"/>
 
         <p>{{ logoutMessage }}</p>
-        <button @click="logout">Déconnexion</button>
+        <MyButton @click="logout">Déconnexion</MyButton>
+
     </main>
     
   </template>
@@ -42,6 +43,7 @@
 import { useGlobalStore } from '@/stores/global'
 import { useRouter } from 'vue-router';
 import {client} from '@/utils/axios'
+import MyButton from '~/components/myButton.vue';
 
 const store = useGlobalStore()
 const router = useRouter();

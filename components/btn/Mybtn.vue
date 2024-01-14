@@ -32,9 +32,6 @@
     color: white;
     box-shadow: inset 0 0 0 2px  white, 0 0 0;
   }
-  &.-ssecondary {
-    background: linear-gradient(to left, black 50%, white 50%);
-  }
   &.-reverse {
     color: white;
     background: linear-gradient(to left, white 50%, black 50%);

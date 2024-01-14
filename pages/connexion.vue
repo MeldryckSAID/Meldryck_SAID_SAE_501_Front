@@ -97,109 +97,118 @@ const logout = async () => {
 };
 </script>
 <template>
-  <div>
-    <h1>connexion</h1>
-  </div>
+  <div class="background">
+    <div class="container">
+      <div class="container-form">
+        <h2>Inscription</h2>
 
-  <div class="container">
-    <div class="container-form">
-      <h2>Inscription</h2>
+        <form
+          class="form-inscription"
+          @submit.prevent="inscription"
+          method="post"
+        >
+          <input
+            class="form-inscription-input"
+            type="text"
+            name="name"
+            id="name"
+            required
+            placeholder="name"
+            v-model="userNew.name"
+          />
+          <input
+            class="form-inscription-input"
+            type="text"
+            name="surname"
+            id="surname"
+            required
+            placeholder="surname"
+            v-model="userNew.surname"
+          />
+          <input
+            class="form-inscription-input"
+            type="text"
+            name="mail"
+            id="mail"
+            required
+            placeholder="mail"
+            v-model="userNew.mail"
+          />
+          <input
+            class="form-inscription-input"
+            type="password"
+            name="Password"
+            id="Password"
+            required
+            placeholder="Mot de Passe"
+            v-model="userNew.Password"
+          />
 
-      <form
-        class="form-inscription"
-        @submit.prevent="inscription"
-        method="post"
-      >
-        <input
-          class="form-inscription-input"
-          type="text"
-          name="name"
-          id="name"
-          required
-          placeholder="name"
-          v-model="userNew.name"
-        />
-        <input
-          class="form-inscription-input"
-          type="text"
-          name="surname"
-          id="surname"
-          required
-          placeholder="surname"
-          v-model="userNew.surname"
-        />
-        <input
-          class="form-inscription-input"
-          type="text"
-          name="mail"
-          id="mail"
-          required
-          placeholder="mail"
-          v-model="userNew.mail"
-        />
-        <input
-          class="form-inscription-input"
-          type="password"
-          name="Password"
-          id="Password"
-          required
-          placeholder="Mot de Passe"
-          v-model="userNew.Password"
-        />
+          <input
+            class="form-inscription-btn"
+            type="submit"
+            value="Je m'inscris"
+          />
+        </form>
+      </div>
 
-        <input
-          class="form-inscription-btn"
-          type="submit"
-          value="Je m'inscris"
-        />
-      </form>
+      <div class="line"></div>
+      <div class="container-form">
+        <h2>Connexion</h2>
+
+        <form class="form-co" @submit.prevent="connexion" method="post">
+          <input
+            class="form-co-input"
+            type="text"
+            name="mail"
+            id="mail"
+            required
+            placeholder="mail"
+            v-model="userCo.mail"
+          />
+          <input
+            class="form-co-input"
+            type="password"
+            name="Password"
+            id="Password"
+            required
+            placeholder="Mot de Passe"
+            v-model="userCo.Password"
+          />
+
+          <input class="form-co-btn" type="submit" value="Je me connecte" />
+        </form>
+      </div>
     </div>
 
-    <div class="container-form">
-      <h2>Connexion</h2>
-
-      <form class="form-co" @submit.prevent="connexion" method="post">
-        <input
-          class="form-co-input"
-          type="text"
-          name="mail"
-          id="mail"
-          required
-          placeholder="mail"
-          v-model="userCo.mail"
-        />
-        <input
-          class="form-co-input"
-          type="password"
-          name="Password"
-          id="Password"
-          required
-          placeholder="Mot de Passe"
-          v-model="userCo.Password"
-        />
-
-        <input class="form-co-btn" type="submit" value="Je me connecte" />
-      </form>
+    <div v-if="userInfo">
+      <h3>Informations de l'utilisateur</h3>
+      <p>Nom : {{ userInfo.name }}</p>
+      <p>Prénom : {{ userInfo.surname }}</p>
+      <p>Email : {{ userInfo.mail }}</p>
     </div>
-  </div>
-  <div v-if="userInfo">
-    <h3>Informations de l'utilisateur</h3>
-    <p>Nom : {{ userInfo.name }}</p>
-    <p>Prénom : {{ userInfo.surname }}</p>
-    <p>Email : {{ userInfo.mail }}</p>
-  </div>
-  <div v-else>
-    <p>Utilisateur non connecté ou informations indisponibles</p>
-  </div>
+    <div v-else>
+      <p>Utilisateur non connecté ou informations indisponibles</p>
+    </div>
 
-  <div v-if="isUserLoggedIn">
-    <button @click="logout">Déconnexion</button>
-  </div>
+    <div v-if="isUserLoggedIn">
+      <button @click="logout">Déconnexion</button>
+    </div>
 
-  <p>{{ message }}</p>
+    <p>{{ message }}</p>
+  </div>
 </template>
 
 <style lang="scss" scoped>
+.background {
+  background-color: black;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: center;
+}
 .container {
   display: flex;
   justify-content: space-around;
@@ -207,13 +216,19 @@ const logout = async () => {
     width: fit-content;
     padding-left: 5%;
     padding-right: 5%;
-  
+
     border-radius: 5%;
-    color: white;
+    color: black;
+    text-align: center;
     flex-direction: column;
-    background-color: black;
+    background-color: white;
     justify-content: center;
     align-items: center;
+  }
+  .line {
+    width: 4px;
+    height: 356px;
+    background-color: white;
   }
 }
 
@@ -228,11 +243,14 @@ const logout = async () => {
     padding: 5px;
     border: 2px solid black;
     border-radius: 5%;
+    background-color: black;
+    color: white;
   }
   &-btn {
-    background-color: white;
-    padding-bottom: 5%;
-  
+    background-color: black;
+    color: white;
+    padding: 5%;
   }
 }
 </style>
+../stores/global.js

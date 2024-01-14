@@ -16,8 +16,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, onMounted, computed } from "vue";
+import { useRouter } from "vue-router";
 import { API } from "@/utils/axios";
 import { useGlobalStore } from "@/store/global.js";
 
@@ -34,7 +34,10 @@ const fetchUserInfo = async () => {
       const response = await API.get(`/user/${userID}`);
       userInfo.value = response.data; // Ajustez selon le format de la réponse de votre API
     } catch (error) {
-      console.error("Erreur lors de la récupération des informations de l'utilisateur :", error.message);
+      console.error(
+        "Erreur lors de la récupération des informations de l'utilisateur :",
+        error.message
+      );
     }
   }
 };
@@ -51,3 +54,4 @@ const logout = () => {
 <style>
 /* Votre style ici */
 </style>
+~/stores/global.js

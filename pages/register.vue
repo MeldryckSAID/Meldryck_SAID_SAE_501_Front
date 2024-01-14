@@ -1,7 +1,8 @@
 <template>
   <main class="main-register">
     <div>
-      <h2>Inscription</h2>
+       <myTitle el="h2" font="okine">Mon Espace</myTitle>
+
       <form class="container-form">
         <input
           class="container-form-input"

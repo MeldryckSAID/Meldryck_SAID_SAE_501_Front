@@ -1,6 +1,6 @@
 <template>
   <main class="main-compte">
-    <myTitle>Mon Espace</myTitle>
+    <myTitle font="okine">Mon Espace</myTitle>
 
     <section class="compte__section">
       <h2>Mes Montres</h2>

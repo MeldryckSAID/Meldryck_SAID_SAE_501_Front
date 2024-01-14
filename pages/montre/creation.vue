@@ -1,6 +1,7 @@
 <template>
   <div class="main-crea">
-    <h2>Création de votre Montre</h2>
+
+    <myTitle el="h2" font="okine">Création de votre Montre</myTitle>
 
     <div class="canvas">
       <treescene v-bind="montre" />

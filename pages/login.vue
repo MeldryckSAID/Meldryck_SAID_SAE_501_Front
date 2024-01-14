@@ -1,7 +1,7 @@
 <template>
   <main class="main-login">
     <div>
-      <h2>Connexion</h2>
+    <myTitle el="h2" font="okine">Connexion</myTitle>
       <form class="container-form" @submit.prevent="connexion" method="post">
         <input
           class="container-form-input"

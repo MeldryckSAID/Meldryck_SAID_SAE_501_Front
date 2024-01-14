@@ -1,6 +1,6 @@
 <template>
   <main class="main-id">
-    <myTitle>Modification de la Montre</myTitle>
+    <myTitle el="h2" font="okine">Modification de la Montre</myTitle>
 
     <div class="container-montre">
       <table class="container-montre-infos">

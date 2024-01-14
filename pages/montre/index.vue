@@ -1,6 +1,6 @@
 <template>
   <main class="main-montre">
-    <myTitle>Les Montres</myTitle>
+    <myTitle font="okine">Les Montres</myTitle>
 
     <div class="container-filtres">
       <div class="container-filtres-filtre">

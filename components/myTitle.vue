@@ -64,6 +64,7 @@ const className = computed(() => ({
   font-size: 24px;
   font-weight: 700;
   word-wrap: break-word;
+  padding: 2%;
   > span {
     color: red;
   }

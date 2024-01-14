@@ -1,7 +1,7 @@
 <template>
   <main class="main-login">
     <div>
-    <myTitle el="h2" font="okine">Connexion</myTitle>
+      <myTitle el="h2" font="okine">Connexion</myTitle>
       <form class="container-form" @submit.prevent="connexion" method="post">
         <input
           class="container-form-input"
@@ -24,7 +24,9 @@
 
         <input class="container-form-btn" type="submit" value="Se connecter" />
       </form>
-     
+      <nuxt-link to="/login">
+        <p class="txt">Vous n'avez pas de compte? Crée en un</p></nuxt-link
+      >
     </div>
   </main>
 </template>
@@ -38,6 +40,11 @@
   min-height: 100vh;
   display: grid;
   align-items: center;
+}
+.txt {
+  text-align: center;
+  color: white;
+  padding: 2%;
 }
 .container-form {
   display: flex;

@@ -1,7 +1,7 @@
 <template>
   <main class="main-register">
     <div>
-       <myTitle el="h2" font="okine">Mon Espace</myTitle>
+      <myTitle el="h2" font="okine">Mon Espace</myTitle>
 
       <form class="container-form">
         <input
@@ -20,10 +20,18 @@
           Créer un compte
         </button>
       </form>
+      <nuxt-link to="/login">
+        <p class="txt">Vous avez un compte? Connectez vous</p></nuxt-link
+      >
     </div>
   </main>
 </template>
 <style lang="scss" scoped>
+.txt {
+  text-align: center;
+  color: white;
+  padding: 2%;
+}
 .main-register {
   background-color: black;
   color: aliceblue;

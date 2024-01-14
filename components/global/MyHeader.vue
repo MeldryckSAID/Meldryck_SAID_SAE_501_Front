@@ -2,7 +2,7 @@
 <template>
   <div class="header-content">
     <!-- <nuxt-link to="/"> <MyLogo class="header-content-logo" /></nuxt-link>-->
-    <nuxt-link to="/"> <LogoMyLogo class="header-content-logo" /></nuxt-link>
+    <nuxt-link to="/"> <LogoMyLogo name="black" class="header-content-logo" /></nuxt-link>
     <ul class="header-content-links">
       <li class="header-content-links-link">
         <nuxt-link to="/configuration">Config</nuxt-link>
@@ -20,7 +20,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .header-content {
   height: 100px;
   background-color: white;
